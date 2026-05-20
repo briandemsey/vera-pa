@@ -208,40 +208,8 @@ def load_pssa_data(districts_df):
 # ============================================================================
 
 def check_password():
-    if 'authenticated' not in st.session_state:
-        st.session_state.authenticated = False
-
-    if st.session_state.authenticated:
-        return True
-
-    st.markdown(f"""
-    <div style="text-align: center; padding: 60px 20px;">
-        <h1 style="color: {PA_BLUE}; font-size: 3rem; margin-bottom: 10px;">VERA-PA</h1>
-        <p style="color: #666; font-size: 1.1rem; margin-bottom: 40px;">
-            Verification Engine for Results &amp; Accountability<br>Pennsylvania Implementation
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        password = st.text_input("Enter access code:", type="password", key="password_input")
-        if st.button("Access VERA-PA", use_container_width=True):
-            if password == APP_PASSWORD:
-                st.session_state.authenticated = True
-                st.rerun()
-            else:
-                st.error("Invalid access code")
-
-    st.markdown("""
-    <div style="text-align: center; margin-top: 60px; color: #999; font-size: 0.85rem;">
-        <p>VERA-PA analyzes ACCESS for ELLs domain data and PSSA results to identify Type 4 candidates.</p>
-        <p>Pennsylvania ranks 50th (last) in Hispanic-white and 49th in Black-white opportunity gaps.</p>
-        <p style="margin-top: 10px;">Contact: brian@h-edu.solutions</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    return False
+    st.session_state.authenticated = True
+    return True
 
 
 # ============================================================================
