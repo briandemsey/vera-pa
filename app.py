@@ -205,10 +205,6 @@ def load_pssa_data(districts_df):
 # AUTHENTICATION
 # ============================================================================
 
-def check_password():
-    st.session_state.authenticated = True
-    return True
-
 
 # ============================================================================
 # TYPE 4 DETECTION
